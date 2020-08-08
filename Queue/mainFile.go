@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Algorithm/Queue/Queue"
+	"Go-Algorithm/Queue/Queue"
 	"fmt"
 	"io/ioutil"
 )

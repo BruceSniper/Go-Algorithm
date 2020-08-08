@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Algorithm/StackArray/StackArray"
+	"Go-Algorithm/StackArray/StackArray"
 	"fmt"
 )
 

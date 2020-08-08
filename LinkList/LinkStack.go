@@ -1,12 +1,8 @@
-package main
+package LinkList
 
 /*
 	链式栈
 */
-type Node struct {
-	data  interface{}
-	pNext *Node
-}
 
 type LinkStack interface {
 	IsEmpty() bool
@@ -25,7 +21,6 @@ func (n *Node) IsEmpty() bool {
 	} else {
 		return false
 	}
-
 }
 
 func (n *Node) Push(data interface{}) {

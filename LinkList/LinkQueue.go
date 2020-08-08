@@ -1,4 +1,4 @@
-package main
+package LinkList
 
 /*
 	链式队列

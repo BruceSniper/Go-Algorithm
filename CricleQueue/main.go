@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Algorithm/CricleQueue/CricleQueue"
+	"Go-Algorithm/CricleQueue/CricleQueue"
 	"fmt"
 )
 
