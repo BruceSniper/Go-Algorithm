@@ -11,7 +11,7 @@ import "fmt"
 func main() {
 	arr := []int{11, 9, 2, 8, 3, 7, 4, 6, 5, 10}
 	//fmt.Println(BubbleFindMax(arr))
-	fmt.Println(BubbleSort(arr))
+	fmt.Println(BubbleSort2(arr))
 }
 
 func BubbleFindMax(arr []int) int {
@@ -45,6 +45,17 @@ func BubbleSort(arr []int) []int {
 				break
 			}
 			fmt.Println(arr)
+		}
+	}
+	return arr
+}
+
+func BubbleSort2(arr []int) []int {
+	for i := 0; i < len(arr)-1; i++ {
+		for j := i + 1; j < len(arr); j++ {
+			if arr[i] > arr[j] {
+				arr[i], arr[j] = arr[j], arr[i]
+			}
 		}
 	}
 	return arr
