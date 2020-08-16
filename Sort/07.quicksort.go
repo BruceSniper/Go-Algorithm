@@ -48,16 +48,12 @@ func QuickSort2(arr []int) []int {
 	if length <= 1 {
 		return arr //一个元素的数组，直接返回
 	} else {
-		n := 0                       //n>=0 && n<=length-1
-		splitdata := arr[n]          //以第一个为基准
+		splitdata := arr[0]          //以第一个为基准
 		low := make([]int, 0, 0)     //存储比我小的
 		high := make([]int, 0, 0)    //存储比我大的
 		mid := make([]int, 0, 0)     //存储与我相等的
 		mid = append(mid, splitdata) //加入第一个相等的
-		for i := 0; i < length; i++ {
-			if i == n {
-				continue
-			}
+		for i := 1; i < length; i++ {
 			if arr[i] < splitdata {
 				low = append(low, arr[i])
 			} else if arr[i] > splitdata {
