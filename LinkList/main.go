@@ -31,7 +31,7 @@ import "fmt"
 //		fmt.Println(data)
 //	}
 //}
-
+//
 func main() {
 	myq := NewLinkQueue()
 	for i := 0; i < 10000000; i++ {

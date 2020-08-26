@@ -3,7 +3,7 @@ package LinkList
 import "fmt"
 
 type Node struct {
-	Data      int
+	Data      interface{}
 	NextPoint *Node
 	PrePoint  *Node
 }
