@@ -30,6 +30,7 @@ func (list *SingleLinkList) GetFirstNode() *SingleLinkNode {
 	return list.head.pNext
 }
 
+//头插法实现
 func (list *SingleLinkList) InsertNodeFront(node *SingleLinkNode) {
 	if list.head == nil {
 		list.head = node
@@ -44,13 +45,19 @@ func (list *SingleLinkList) InsertNodeFront(node *SingleLinkNode) {
 
 }
 
+//头插法实现
 func (list *SingleLinkList) InsertNodeBack(node *SingleLinkNode) {
 	if list.head == nil {
 		list.head = node
 		node.pNext = nil
 		list.length++ //插入节点，数据追加
 	} else {
-
+		p := list.head //备份头部位置信息
+		for p.pNext != nil {
+			p = p.pNext
+		}
+		p.pNext = node
+		list.length++ //插入节点，数据追加
 	}
 }
 
