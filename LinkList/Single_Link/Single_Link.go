@@ -192,6 +192,7 @@ func (list *SingleLinkList) ReverseList() {
 			pre = cur            //持续推进
 			cur = curNext        //持续推进
 		}
+		list.head.pNext.pNext = nil
 		list.head.pNext = pre
 	}
 }
