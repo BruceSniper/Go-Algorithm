@@ -19,6 +19,7 @@ type SingleLink interface {
 	DeleteAtIndex(index int) bool             //根据索引值删除节点，判断是否成功
 	String() string                           //返回链表字符串
 	GetMid() *SingleLinkNode                  //求链表的中间位置
+	ReverseList()                             //反转链表
 }
 
 //单链表的结构
@@ -176,5 +177,21 @@ func (list *SingleLinkList) GetMid() *SingleLinkNode {
 			phead2 = phead2.pNext.pNext
 		}
 		return phead1 //中间节点
+	}
+}
+
+func (list *SingleLinkList) ReverseList() {
+	if list.head == nil || list.head.pNext == nil {
+		return
+	} else {
+		var pre *SingleLinkNode                   //前置节点
+		var cur *SingleLinkNode = list.head.pNext //当前节点
+		for cur != nil {
+			curNext := cur.pNext //后续节点
+			cur.pNext = pre      //反转第一步
+			pre = cur            //持续推进
+			cur = curNext        //持续推进
+		}
+		list.head.pNext = pre
 	}
 }
