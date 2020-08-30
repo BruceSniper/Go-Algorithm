@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Go-Algorithm/LinkList/Double_LinkList"
 	"Go-Algorithm/StackArray/StackArray"
 	"errors"
 	"fmt"
@@ -37,7 +38,7 @@ func GetAll(path string, files []string) ([]string, error) {
 	return files, nil
 }
 
-func main() {
+func main2() {
 	path := "D:\\codes"              //路径
 	var files []string               //数组字符串
 	mystack := StackArray.NewStack() //初始化一个栈
@@ -60,4 +61,19 @@ func main() {
 	for i := 0; i < len(files); i++ { //打印文件夹里的文件
 		fmt.Println(files[i])
 	}
+}
+
+func main() {
+	dlist := Double_LinkList.NewDoubleLinkList()
+	node1 := Double_LinkList.NewDoubleLinkNode(1)
+	node2 := Double_LinkList.NewDoubleLinkNode(2)
+	node3 := Double_LinkList.NewDoubleLinkNode(3)
+	node4 := Double_LinkList.NewDoubleLinkNode(4)
+	node5 := Double_LinkList.NewDoubleLinkNode(5)
+	dlist.InsertHead(node1)
+	dlist.InsertHead(node2)
+	dlist.InsertHead(node3)
+	dlist.InsertBack(node4)
+	dlist.InsertBack(node5)
+	fmt.Println(dlist.String())
 }
