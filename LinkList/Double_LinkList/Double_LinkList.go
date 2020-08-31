@@ -122,3 +122,74 @@ func (dlist *DoubleLinkList) InsertValueBack(dest *DoubleLinkNode, node *DoubleL
 	}
 
 }
+
+func (dlist *DoubleLinkList) InsertValueHeadByValue(dest interface{}, node *DoubleLinkNode) bool {
+	phead := dlist.head
+	for phead.next != nil && phead.next.value != dest {
+		phead = phead.next
+	}
+	if phead.next.value == dest {
+		if phead.next.next != nil {
+			phead.next.next.pre = node
+		}
+		node.next = phead.next
+		node.pre = phead
+		phead.next = node
+
+		dlist.length++
+		return true
+	} else {
+		return false
+	}
+}
+
+func (dlist *DoubleLinkList) GetNodeAtIndex(index int) *DoubleLinkNode {
+	if index > dlist.length-1 || index < 0 {
+		return nil
+	}
+	phead := dlist.head
+	for index > -1 {
+		phead = phead.next
+		index-- //计算位置
+	}
+	return phead
+}
+
+func (dlist *DoubleLinkList) DeleteNode(node *DoubleLinkNode) bool {
+	if node == nil {
+		return false
+	} else {
+		phead := dlist.head
+		for phead.next != nil && phead.next != node {
+			phead = phead.next
+		}
+		if phead.next == node {
+			if phead.next.next != nil {
+				phead.next.next.pre = phead //设置pre
+			}
+			phead.next = phead.next.next //设置next
+			dlist.length--
+			return true
+		} else {
+			return false
+		}
+	}
+}
+
+func (dlist *DoubleLinkList) DeleteNodeAtIndex(index int) bool {
+	if index > dlist.length-1 || index < 0 {
+		return false
+	} else {
+		phead := dlist.head
+		for index > 0 {
+			phead = phead.next
+			index-- //计算位置
+		}
+		if phead.next.next != nil {
+			phead.next.next.pre = phead //设置pre
+		}
+		phead.next = phead.next.next //设置next
+		dlist.length--
+		return true
+	}
+}
