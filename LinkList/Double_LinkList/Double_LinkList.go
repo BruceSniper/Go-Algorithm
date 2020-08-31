@@ -81,3 +81,44 @@ func (dlist *DoubleLinkList) String() string {
 	return listString1 + listString2 + "\n" //打印链表字符串
 
 }
+
+func (dlist *DoubleLinkList) InsertValueHead(dest *DoubleLinkNode, node *DoubleLinkNode) bool {
+	phead := dlist.head
+	for phead.next != nil && phead.next != dest {
+		phead = phead.next
+	}
+	if phead.next == dest {
+		if phead.next.next != nil {
+			phead.next.next.pre = node
+		}
+		node.next = phead.next
+		node.pre = phead
+		phead.next = node
+
+		dlist.length++
+		return true
+	} else {
+		return false
+	}
+
+}
+
+func (dlist *DoubleLinkList) InsertValueBack(dest *DoubleLinkNode, node *DoubleLinkNode) bool {
+	phead := dlist.head
+	for phead.next != nil && phead.next != dest {
+		phead = phead.next
+	}
+	if phead.next == dest {
+		if phead.next.next != nil {
+			phead.next.next.pre = node
+		}
+		node.next = phead.next.next
+		phead.next.next = node
+		node.pre = phead.next
+		dlist.length++
+		return true
+	} else {
+		return false
+	}
+
+}
