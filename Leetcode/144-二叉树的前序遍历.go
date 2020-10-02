@@ -1,11 +1,11 @@
 package Leetcode
 
 //Definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+//type TreeNode struct {
+//	Val   int
+//	Left  *TreeNode
+//	Right *TreeNode
+//}
 
 func preorderTraversal(root *TreeNode) []int {
 	// 定义stack模拟二叉树，利用先入后出的特点，出栈顺序为中左右，进栈顺序则为右左中
