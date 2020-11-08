@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	var n int
 	fmt.Scanf("%d", &n)
-	List := make([]*ListNode, n)
+	var List []*ListNode
 	for i := 0; i < n; i++ {
 		fmt.Scanf("%d", &List[i].Val)
 		List[i] = List[i].Next
